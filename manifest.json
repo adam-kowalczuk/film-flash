@@ -1,0 +1,13 @@
+{
+  "manifest_version": 2,
+  "name": "MovieTab",
+  "description": "Generates a random movie background image when user opens a new browser tab.",
+  "version": "1",
+  "author": "Adam Kowalczuk",
+  "browser_action": {
+    "default_icon": "tab-icon.png",
+    "default_title": "Movies! Movies! Movies!"
+  },
+  "chrome_url_overrides": { "newtab": "newtab.html" },
+  "permissions": ["activeTab"]
+}
