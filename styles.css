@@ -6,7 +6,6 @@
 }
 
 main {
-  background-image: url(mario-test.jpeg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -15,18 +14,24 @@ main {
   align-content: center;
   width: 100%;
   height: 100vh;
+  opacity: 0; /* Start with opacity set to 0 */
+  transition: opacity 0.7s ease; /* Apply transition effect to opacity */
+}
+
+.main-fade-in {
+  opacity: 1; /* Change opacity to 1 for the fade-in effect */
 }
 
 article {
-  position: relative;
-  top: 100px;
-  left: 100px;
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
 }
 
 #clock {
   font-family: "Courier New", Courier, monospace;
   font-weight: 600;
-  font-size: 10rem;
+  font-size: 7rem;
   color: white;
   -webkit-text-stroke: 2px;
   -webkit-text-stroke-color: black;
