@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "MovieTab",
+  "name": "FilmFlash",
   "description": "Generates a random movie background image when user opens a new browser tab.",
   "version": "1",
   "author": "Adam Kowalczuk",
