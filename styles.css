@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: black;
+}
+
 main {
   background-size: cover;
   background-position: center;
@@ -29,7 +33,7 @@ article {
   left: 50px;
   bottom: 50px;
   color: white;
-  max-width: 800px;
+  max-width: calc(50% - 50px);
   opacity: 0;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 1rem;
@@ -80,7 +84,14 @@ article {
   transform: translateY(0);
 }
 
-a {
+#movie-link {
   text-decoration: none;
   color: white;
+}
+
+#logo {
+  width: 100px;
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
 }
