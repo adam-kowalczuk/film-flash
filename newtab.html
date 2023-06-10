@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <!-- <script src="index.js" defer></script> -->
     <script src="api.js" defer></script>
     <script src="trailer.js" defer></script>
@@ -15,10 +19,12 @@
     <main>
       <!-- <span id="clock"></span> -->
       <article>
-        <a id="movie-link" href=""><h1 id="title"></h1></a>
+        <div class="title">
+          <h1 id="title"></h1>
+          <a href="#" id="trailer-link"><i class="fa-solid fa-film"></i></a>
+        </div>
         <p id="description"></p>
         <!-- Link to open the modal -->
-        <a href="#" id="trailer-link">Watch Trailer</a>
       </article>
       <a href="https://www.themoviedb.org">
         <img id="logo" src="tmdb-logo.svg" alt="The Movie Database Logo" />
