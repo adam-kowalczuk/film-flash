@@ -20,7 +20,7 @@ fetch(
     const mainElement = document.querySelector("main");
     const title = document.getElementById("title");
     const description = document.getElementById("description");
-    const movieLink = document.getElementById("movie-link");
+    const trailerLink = document.getElementById("trailer-link");
     const movieId = randomMovie.id;
 
     // Update the fetch URL to retrieve the specific movie details, including videos
@@ -39,7 +39,7 @@ fetch(
 
         mainElement.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${backdropPath})`;
         title.innerHTML = randomMovie.title;
-        movieLink.href = trailerUrl;
+        trailerLink.href = trailerUrl;
         description.innerHTML = randomMovie.overview;
 
         mainElement.classList.add("main-fade-in");
