@@ -47,8 +47,14 @@ article {
   transform: translateX(0);
 }
 
-#title {
+.title {
+  display: flex;
+  align-items: baseline;
   margin-bottom: 1rem;
+}
+
+#title {
+  /* margin-bottom: 1rem; */
   font-size: 2rem;
   font-family: "Courier New", Courier, monospace;
   -webkit-text-stroke: 1px;
@@ -84,16 +90,16 @@ article {
   transform: translateY(0);
 }
 
-#movie-link {
-  text-decoration: none;
-  color: white;
-}
-
 #logo {
   width: 100px;
   position: absolute;
   bottom: 50px;
   right: 50px;
+}
+
+.fa-film {
+  font-size: 1.5rem;
+  margin-left: 1rem;
 }
 
 #trailer-modal {
@@ -118,9 +124,18 @@ article {
   border-radius: 15px;
   width: 600px;
   position: relative;
-  aspect-ratio: 16/9; /* Adjust the aspect ratio according to your video aspect ratio */
 }
 
+#trailer-link {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+#trailer-link:hover {
+  color: red;
+}
 .close {
   color: white;
   position: absolute;
@@ -129,4 +144,8 @@ article {
   font-size: 25px;
   font-weight: bold;
   cursor: pointer;
+}
+
+iframe {
+  border: none;
 }
