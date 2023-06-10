@@ -4,8 +4,8 @@ document
     event.preventDefault();
 
     // Extract the video ID from the YouTube URL
-    const movieLink = document.getElementById("movie-link");
-    const videoId = extractYouTubeVideoId(movieLink.href);
+    const trailerLink = document.getElementById("trailer-link");
+    const videoId = extractYouTubeVideoId(trailerLink.href);
 
     // Generate the YouTube iframe embed code
     const embedCode = generateYouTubeEmbedCode(videoId);
