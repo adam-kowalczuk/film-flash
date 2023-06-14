@@ -65,7 +65,7 @@ article {
 #description {
   font-size: 1rem;
   text-align: justify;
-  font-style: italic;
+  /* font-style: italic; */
 }
 
 #clock {
@@ -74,7 +74,7 @@ article {
   right: 50px;
   font-family: "Courier New", Courier, monospace;
   font-weight: 600;
-  font-size: 4rem;
+  font-size: 2rem;
   color: white;
   -webkit-text-stroke: 2px;
   -webkit-text-stroke-color: black;
@@ -151,6 +151,49 @@ article {
 }
 
 iframe {
-  /* border: none; */
-  border-radius: 5px;
+  border: transparent;
+  border-radius: 10px;
+}
+
+@media (max-width: 1024px) {
+  article {
+    max-width: calc(75% - 50px);
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  article {
+    position: static;
+  }
+
+  #logo {
+    position: static;
+    margin: 2rem 0 1rem 0;
+    width: 75px;
+  }
+
+  .title {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #title {
+    text-align: center;
+  }
+
+  .icons {
+    margin-top: 1rem;
+  }
+
+  .fa-solid:nth-of-type(1) {
+    margin-left: none;
+  }
 }
