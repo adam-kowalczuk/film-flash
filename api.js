@@ -1,24 +1,12 @@
-const options = {
-  method: "GET",
-  headers: {
-    accept: "application/json",
-    Authorization: "PLACEHOLDER"
-  }
-};
-
 const kebabCase = function(title) {
   const punctuationPattern = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g;
   const newTitle = title.replaceAll(punctuationPattern, "");
   return newTitle.toLowerCase().split(" ").join("-");
 };
 
-fetch(
-  "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1",
-  options
-)
+fetch("https://film-flash.netlify.app/.netlify/functions/popular")
   .then((response) => response.json())
   .then((response) => {
-    console.log(response.results);
     const randomNumber = Math.floor(Math.random() * 20);
     const randomMovie = response.results[randomNumber];
     const backdropPath = randomMovie.backdrop_path;
@@ -35,11 +23,11 @@ fetch(
 
     // Update the fetch URL to retrieve the specific movie details, including videos
     fetch(
-      `https://api.themoviedb.org/3/movie/${movieId}?language=en-US&append_to_response=videos`,
-      options
+      `https://film-flash.netlify.app/.netlify/functions/videos?id=${movieId}`
     )
       .then((response) => response.json())
       .then((movieResponse) => {
+        console.log("Movie Response, ", movieResponse.videos.results);
         // Retrieve the movie trailer details from the fetched data
         const trailer = movieResponse.videos.results.find((video) =>
           /trailer/i.test(video.name)
