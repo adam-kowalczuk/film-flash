@@ -179,7 +179,7 @@ iframe {
 
   article {
     position: static;
-    min-width: calc(75% - 50px);
+    max-width: calc(75% - 50px);
     justify-content: center;
   }
 
@@ -189,10 +189,11 @@ iframe {
   }
 
   .title {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-evenly;
     margin-bottom: 1rem;
+    width: inherit;
   }
 
   #title {
