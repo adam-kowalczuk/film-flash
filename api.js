@@ -1,10 +1,10 @@
-const kebabCase = function(title) {
+const kebabCase = function (title) {
   const punctuationPattern = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g;
   const newTitle = title.replaceAll(punctuationPattern, "");
   return newTitle.toLowerCase().split(" ").join("-");
 };
 
-fetch("https://film-flash.netlify.app/.netlify/functions/popular")
+fetch("https://film-flash.netlify.app/.netlify/functions/now-playing")
   .then((response) => response.json())
   .then((response) => {
     const randomNumber = Math.floor(Math.random() * 20);
