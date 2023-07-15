@@ -32,12 +32,10 @@ article {
   justify-content: center;
   flex-direction: column;
   position: absolute;
-  /* position: static; */
   left: 50px;
   bottom: 50px;
   color: white;
-  max-width: calc(50% - 50px);
-  /* margin-bottom: 2.5rem; */
+  max-width: min-content;
   opacity: 0;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 1rem;
@@ -54,27 +52,20 @@ article {
 .title {
   display: flex;
   align-items: baseline;
-  justify-content: center;
-  margin-bottom: 1rem;
-  /* flex-wrap: wrap; */
-  /* flex-direction: column; */
-  /* align-items: center;
-  justify-content: center; */
+  justify-content: space-between;
+  width: max-content;
 }
 
 #title {
   margin-bottom: 1rem;
   font-size: 2rem;
-  font-family: "Courier New", Courier, monospace;
-  text-align: center;
-  -webkit-text-stroke: 1px;
-  -webkit-text-stroke-color: black;
+  font-family: "Roboto", sans-serif;
 }
 
 #description {
   font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
   text-align: justify;
-  /* font-style: italic; */
 }
 
 #clock {
@@ -111,15 +102,21 @@ article {
 .icons {
   display: flex;
   align-items: baseline;
-  justify-content: space-between;
-  padding: 0 1rem;
+  margin-left: 0.5rem;
+}
+
+.icons a {
+  margin: 0 0.5rem;
+}
+
+.icons a:last-child {
+  margin-right: 0;
 }
 
 .fa-solid {
   font-size: 1.5rem;
   text-decoration: none;
   color: white;
-  margin: 0 0.5rem;
   transition: transform 0.3s ease;
 }
 
@@ -165,12 +162,12 @@ article {
 iframe {
   border: transparent;
 }
-
+/* 
 @media (max-width: 1200px) {
   article {
     max-width: calc(75% - 50px);
   }
-}
+} */
 
 @media (max-width: 768px) {
   main {
@@ -182,18 +179,20 @@ iframe {
 
   article {
     position: static;
+    min-width: calc(75% - 50px);
+    justify-content: center;
   }
 
   #logo {
     position: static;
     margin: 2rem 0 1rem 0;
-    width: 75px;
   }
 
   .title {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 1rem;
   }
 
   #title {
@@ -203,5 +202,10 @@ iframe {
 
   .icons {
     margin-top: 1rem;
+    margin-left: 0;
+  }
+
+  .icons a:last-child {
+    margin-right: 0.5rem;
   }
 }
