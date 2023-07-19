@@ -10,30 +10,28 @@ fetch("https://film-flash.netlify.app/.netlify/functions/now-playing")
     const randomNumber = Math.floor(Math.random() * 20);
     const randomMovie = response.results[randomNumber];
     const backdropPath = randomMovie.backdrop_path;
+    const movieId = randomMovie.id;
 
     const kebabTitle = kebabCase(randomMovie.title);
 
-    const mainElement = document.querySelector("main");
-    const title = document.getElementById("title");
-    const description = document.getElementById("description");
-    const info = document.getElementById("info");
-    const trailerLink = document.getElementById("trailer-link");
-    const showtimes = document.getElementById("showtimes");
-    const movieId = randomMovie.id;
-
-    // Update the fetch URL to retrieve the specific movie details, including videos
     fetch(
       `https://film-flash.netlify.app/.netlify/functions/videos?id=${movieId}`
     )
       .then((response) => response.json())
       .then((movieResponse) => {
-        console.log("Movie Response, ", movieResponse.videos.results);
-        // Retrieve the movie trailer details from the fetched data
+        console.log("Movie Response:", movieResponse.videos.results);
         const trailer = movieResponse.videos.results.find((video) =>
           /trailer/i.test(video.name)
         );
         const trailerKey = trailer.key;
         const trailerUrl = `https://www.youtube.com/watch?v=${trailerKey}`;
+
+        const mainElement = document.querySelector("main");
+        const title = document.getElementById("title");
+        const description = document.getElementById("description");
+        const info = document.getElementById("info");
+        const trailerLink = document.getElementById("trailer-link");
+        const showtimes = document.getElementById("showtimes");
 
         mainElement.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${backdropPath})`;
         title.innerHTML = randomMovie.title;
