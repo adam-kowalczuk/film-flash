@@ -1,24 +1,3 @@
-document
-  .getElementById("trailer-link")
-  .addEventListener("click", function(event) {
-    event.preventDefault();
-
-    // Extract the video ID from the YouTube URL
-    const trailerLink = document.getElementById("trailer-link");
-    const videoId = extractYouTubeVideoId(trailerLink.href);
-
-    // Generate the YouTube iframe embed code
-    const embedCode = generateYouTubeEmbedCode(videoId);
-
-    // Create a container for the video and insert the embed code
-    const container = document.getElementById("youtube-video-container");
-    container.innerHTML = embedCode;
-
-    // Display the modal
-    const modal = document.getElementById("trailer-modal");
-    modal.style.display = "block";
-  });
-
 // Function to extract the YouTube video ID from the URL
 const extractYouTubeVideoId = (url) => {
   const videoIdRegex = /[?&]v=([^&#]+)/;
@@ -41,9 +20,26 @@ const generateYouTubeEmbedCode = (videoId) => {
   return iframe.outerHTML;
 };
 
+// Open the trailer modal when the trailer link is clicked
+document
+  .getElementById("trailer-link")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
+
+    const trailerLink = document.getElementById("trailer-link");
+    const videoId = extractYouTubeVideoId(trailerLink.href);
+    const embedCode = generateYouTubeEmbedCode(videoId);
+
+    const container = document.getElementById("youtube-video-container");
+    container.innerHTML = embedCode;
+
+    const modal = document.getElementById("trailer-modal");
+    modal.style.display = "block";
+  });
+
 // Close the modal when the close button is clicked
 document
   .getElementsByClassName("close")[0]
-  .addEventListener("click", function() {
+  .addEventListener("click", function () {
     document.getElementById("trailer-modal").style.display = "none";
   });
