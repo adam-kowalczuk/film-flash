@@ -1,5 +1,5 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Film Flash",
   "description": "Generates a random movie background, title, and description when user opens a new browser tab.",
   "version": "0.0.0.1",
