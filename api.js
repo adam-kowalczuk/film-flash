@@ -19,7 +19,6 @@ fetch("https://film-flash.netlify.app/.netlify/functions/now-playing")
     )
       .then((response) => response.json())
       .then((movieResponse) => {
-        console.log("Movie Response:", movieResponse.videos.results);
         const trailer = movieResponse.videos.results.find((video) =>
           /trailer/i.test(video.name)
         );
