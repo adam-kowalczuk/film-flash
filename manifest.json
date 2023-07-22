@@ -4,7 +4,7 @@
   "description": "Generates a random movie background, title, and description when user opens a new browser tab.",
   "version": "0.0.0.1",
   "author": "Adam Kowalczuk",
-  "browser_action": {
+  "action": {
     "default_icon": { "16": "icon16.png", "32": "icon32.png" },
     "default_title": "Movies! Movies! Movies!"
   },
