@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Film Flash",
   "description": "Generates a random movie background, title, and description when user opens a new browser tab.",
-  "version": "0.0.0.1",
+  "version": "0.0.1",
   "author": "Adam Kowalczuk",
   "action": {
     "default_icon": { "16": "icon16.png", "32": "icon32.png" },
